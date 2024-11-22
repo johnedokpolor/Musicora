@@ -1,0 +1,51 @@
+@font-face {
+  font-family: Outfit;
+  src: url(./assets/Outfit-Regular.ttf);
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: Outfit;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  .play {
+    width: 48px;
+    border-radius: 50%;
+    animation: rotate 6s linear infinite;
+  }
+  .light {
+    @apply h-screen bg-white;
+  }
+  .dark {
+    @apply h-screen bg-black text-white;
+  }
+  .volume {
+    -webkit-appearance: none;
+  }
+  .volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+
+    border: 4px solid #166534;
+  }
+  .volume::-webkit-slider-thumb {
+    @apply h-4 w-4 rounded-full bg-white;
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
