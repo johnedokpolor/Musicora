@@ -69,7 +69,7 @@ const Player = () => {
           alt={track.name}
         />
         <div>
-          <marquee scrollamount="5" className="w-auto lg:w-60">
+          <marquee scrollamount="5" className="w-full lg:w-60">
             <p>{track.name}</p>
           </marquee>
 
@@ -79,12 +79,16 @@ const Player = () => {
       <div className="flex flex-col items-center gap-1">
         <div className="flex gap-4">
           <img
-            className="hidden w-4 cursor-pointer lg:block"
+            className="hidden w-4 cursor-pointer"
             src={assets.shuffle_icon}
             alt=""
           />
           <p className="text-xl sm:text-base" onClick={addToFavourites}>
-            {isFavourite ? <FaHeart /> : <FaRegHeart />}
+            {isFavourite ? (
+              <FaHeart className="text-red-600" />
+            ) : (
+              <FaRegHeart />
+            )}
           </p>
           <img
             onClick={() => prev(track.id)}
@@ -114,12 +118,12 @@ const Player = () => {
             alt=""
           />
           <img
-            className="hidden w-4 cursor-pointer lg:block"
+            className="hidden w-4 cursor-pointer"
             src={assets.loop_icon}
             alt=""
           />
         </div>
-        <div className="flex items-center gap-5">
+        <div className="relative flex items-center gap-5">
           <p className="hidden lg:block">
             {time.currentTime.minutes}:
             {`${time.currentTime.seconds}`.length === 1 ? "0" : ""}
@@ -128,7 +132,7 @@ const Player = () => {
           <div
             onClick={(e) => seekSong(e)}
             ref={seekBg}
-            className="my-2 hidden w-[90vw] max-w-[500px] cursor-pointer rounded-full bg-gray-900 lg:block lg:w-[60vw]"
+            className="my-2 w-full max-w-[500px] cursor-pointer rounded-full bg-gray-900 lg:block lg:w-[60vw]"
           >
             <hr
               ref={seekBar}

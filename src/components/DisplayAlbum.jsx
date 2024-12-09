@@ -25,8 +25,8 @@ const DisplayAlbum = () => {
           {/* <h4>{albumData.desc}</h4> */}
           <p className="mt-1">
             <img
-              className="inline-block w-5"
-              src={assets.spotify_logo}
+              className="inline-block w-5 rounded-full"
+              src="https://greenlandtelecoms.com.ng/images/musicora.jpg"
               alt=""
             />{" "}
             <b>Musicora</b> &bull; 1,234,577 likes &bull; <b>50 songs,</b> about

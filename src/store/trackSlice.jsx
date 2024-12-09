@@ -17,6 +17,9 @@ const trackSlice = createSlice({
       let id = action.payload;
       state.track = songsData[id];
     },
+    loop(state) {
+      state.track = songsData[0];
+    },
   },
 });
 export const trackActions = trackSlice.actions;

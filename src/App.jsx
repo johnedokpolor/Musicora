@@ -12,6 +12,7 @@ function App() {
   const { audioRef, autoNext } = useContext(PlayerContext);
   const dark = useSelector((state) => state.darkmode.dark);
   const track = useSelector((state) => state.track.track);
+  // localStorage.clear();
 
   return (
     <div>

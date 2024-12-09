@@ -90,6 +90,10 @@ const PlayerContextProvider = (props) => {
       await dispatch(trackActions.next(id + 1));
       await audioRef.current.play();
       dispatch(playStatusActions.on());
+    } else {
+      await dispatch(trackActions.loop());
+      await audioRef.current.play();
+      dispatch(playStatusActions.on());
     }
   };
   const autoNext = async (id) => {

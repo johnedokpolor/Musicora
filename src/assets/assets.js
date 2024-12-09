@@ -24,9 +24,6 @@ import spotify_logo from "./spotify_logo.png";
 import clock_icon from "./clock_icon.png";
 import img1 from "./thegoat.jpg";
 import img2 from "./halloffame.jpg";
-import img3 from "./lord.jpg";
-import img4 from "./sprinter.jpg";
-import img5 from "./creep.jpg";
 import img6 from "./party.jpg";
 import img7 from "./life.jpg";
 import img8 from "./murder.jpg";
@@ -34,9 +31,6 @@ import img10 from "./img10.jpg";
 import img11 from "./img11.jpg";
 import img15 from "./img15.jpg";
 import img16 from "./img16.jpg";
-import song1 from "./A$AP_Rocky_Praise_The_Lord_x_Da_Shine_x_Skepta.mp3";
-import song2 from "./Central_Cee_x_Dave_Sprinter.mp3";
-import song3 from "./DaBaby_THAT’S_WHY_I_CREEP_.mp3";
 import song4 from "./Joyner_Lucas_x_Ty_Dolla_$ign_Late_to_the_Party.mp3";
 import song5 from "./Lil_Uzi_Vert_The_Way_Life_Goes.mp3";
 import song6 from "./Polo_G_21.mp3";
@@ -231,30 +225,6 @@ export const albumSongs = [
 export const songsData = [
   {
     id: 0,
-    name: "Praise The Lord",
-    image: img3,
-    file: song1,
-    desc: "A$AP Rocky ft Da Shine ft Skepta",
-    duration: "3:27",
-  },
-  {
-    id: 1,
-    name: "Sprinter",
-    image: img4,
-    file: song2,
-    desc: "Central Cee x Dave",
-    duration: "3:49",
-  },
-  {
-    id: 2,
-    name: "THAT'S WHY I CREEP",
-    image: img5,
-    file: song3,
-    desc: "Dababy",
-    duration: "2:32",
-  },
-  {
-    id: 3,
     name: "Late To The Party",
     image: img6,
     file: song4,
@@ -262,7 +232,7 @@ export const songsData = [
     duration: "3:29",
   },
   {
-    id: 4,
+    id: 1,
     name: "The Way Life Goes",
     image: img7,
     file: song5,
@@ -270,7 +240,7 @@ export const songsData = [
     duration: "3:42",
   },
   {
-    id: 5,
+    id: 2,
     name: "21",
     image: img1,
     file: song6,
@@ -278,7 +248,7 @@ export const songsData = [
     duration: "2:45",
   },
   {
-    id: 6,
+    id: 3,
     name: "Black Hearted",
     image: img2,
     file: song7,
@@ -286,7 +256,7 @@ export const songsData = [
     duration: "3:14",
   },
   {
-    id: 7,
+    id: 4,
     name: "Murder On My Mind",
     image: img8,
     file: song8,
@@ -294,7 +264,7 @@ export const songsData = [
     duration: "4:30",
   },
   {
-    id: 8,
+    id: 5,
     name: "I Know",
     image: img1,
     file: song9,
@@ -302,7 +272,7 @@ export const songsData = [
     duration: "2:57",
   },
   {
-    id: 9,
+    id: 6,
     name: "Fame and Riches",
     image: img2,
     file: song10,
