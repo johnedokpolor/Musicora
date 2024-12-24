@@ -3,16 +3,14 @@ import Sidebar from "./components/Sidebar";
 import { useSelector } from "react-redux";
 import Player from "./components/Player";
 import Display from "./components/Display";
-import ScrollToTop from "./ScrollToTop";
 import { PlayerContext } from "./context/PlayerContext";
 import "./style.css";
-import BottomNav from "./components/bottomNav";
+import BottomNav from "./components/BottomNav";
 
 function App() {
   const { audioRef, autoNext } = useContext(PlayerContext);
   const dark = useSelector((state) => state.darkmode.dark);
   const track = useSelector((state) => state.track.track);
-  // localStorage.clear();
 
   return (
     <div>

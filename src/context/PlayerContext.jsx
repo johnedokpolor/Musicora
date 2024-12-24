@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { playStatusActions } from "../store/PlayStatus";
 import { trackActions } from "../store/trackSlice";
 import { songsData } from "../assets/assets";
+import { muteActions } from "../store/mute";
 
 export const PlayerContext = createContext();
 
@@ -33,11 +34,13 @@ const PlayerContextProvider = (props) => {
   const seekBg = useRef();
 
   const playStatus = useSelector((state) => state.playStatus.playStatus);
+  const mute = useSelector((state) => state.mute.mute);
   const dispatch = useDispatch();
 
   useEffect(() => {
     volumeRef.current.max = 10;
     volumeRef.current.value = 1;
+    audioRef.current.volume = volumeRef.current.value / 10;
   }, []);
   useEffect(() => {
     localStorage.setItem("favourites", JSON.stringify(favourites));
@@ -111,6 +114,16 @@ const PlayerContextProvider = (props) => {
   const volume = async (e) => {
     audioRef.current.volume = volumeRef.current.value / 10;
   };
+  const muteSong = () => {
+    if (!mute) {
+      audioRef.current.volume = 0;
+      volumeRef.current.value = 0;
+    } else {
+      volumeRef.current.value = 2;
+      audioRef.current.volume = volumeRef.current.value / 10;
+    }
+    dispatch(muteActions.toggle());
+  };
 
   //   useEffect(() => {
   //     AOS.init({
@@ -139,6 +152,7 @@ const PlayerContextProvider = (props) => {
     volume,
     favourites,
     setFavourites,
+    muteSong,
   };
   return (
     <PlayerContext.Provider value={contextValue}>

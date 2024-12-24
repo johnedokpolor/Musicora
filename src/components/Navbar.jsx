@@ -1,23 +1,19 @@
 import React from "react";
-import { assets } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
 const Navbar = () => {
   const navigate = useNavigate();
   return (
     <div>
       <div className="flex w-full items-center justify-between font-semibold">
         <div className="flex items-center gap-2">
-          <img
+          <FaChevronLeft
+            className="h-7 w-7 cursor-pointer rounded-2xl bg-black p-2"
             onClick={() => navigate(-1)}
-            className="w-7 cursor-pointer rounded-2xl bg-black p-2"
-            src={assets.arrow_left}
-            alt=""
           />
-          <img
+          <FaChevronRight
+            className="h-7 w-7 cursor-pointer rounded-2xl bg-black p-2"
             onClick={() => navigate(1)}
-            className="w-7 cursor-pointer rounded-2xl bg-black p-2"
-            src={assets.arrow_right}
-            alt=""
           />
         </div>
         <div className="flex gap-4">

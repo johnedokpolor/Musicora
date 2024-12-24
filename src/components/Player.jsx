@@ -1,14 +1,22 @@
 import React from "react";
-import { assets, songsData } from "../assets/assets";
 import { useContext } from "react";
 import { PlayerContext } from "../context/PlayerContext";
 import { useSelector } from "react-redux";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
+import {
+  FaHeart,
+  FaRegHeart,
+  FaPlay,
+  FaPause,
+  FaVolumeUp,
+  FaVolumeMute,
+} from "react-icons/fa";
 import { useState } from "react";
+import { IoPlaySkipBackSharp, IoPlaySkipForwardSharp } from "react-icons/io5";
 import { useEffect } from "react";
 
 const Player = () => {
   const track = useSelector((state) => state.track.track);
+  const mute = useSelector((state) => state.mute.mute);
   const [isFavourite, setIsFavourite] = useState(false);
 
   const {
@@ -25,7 +33,9 @@ const Player = () => {
     volume,
     favourites,
     setFavourites,
+    muteSong,
   } = useContext(PlayerContext);
+
   useEffect(() => {
     let favouriteIndex = favourites.findIndex(
       (index) => index.name === track.name,
@@ -59,7 +69,7 @@ const Player = () => {
     }
   };
   console.log(favourites);
-
+  console.log(mute);
   return (
     <div className="flex h-[10%] w-full items-center justify-between px-4 text-white dark:bg-black lg:px-4">
       <div className="flex items-center gap-4">
@@ -78,49 +88,35 @@ const Player = () => {
       </div>
       <div className="flex flex-col items-center gap-1">
         <div className="flex gap-4">
-          <img
-            className="hidden w-4 cursor-pointer"
-            src={assets.shuffle_icon}
-            alt=""
-          />
-          <p className="text-xl sm:text-base" onClick={addToFavourites}>
+          <p
+            className="text-[18px] sm:text-base lg:text-[16px]"
+            onClick={addToFavourites}
+          >
             {isFavourite ? (
               <FaHeart className="text-red-600" />
             ) : (
               <FaRegHeart />
             )}
           </p>
-          <img
+
+          <IoPlaySkipBackSharp
+            className="hidden cursor-pointer text-[16px] lg:block"
             onClick={() => prev(track.id)}
-            className="hidden w-4 cursor-pointer lg:block"
-            src={assets.prev_icon}
-            alt=""
           />
           {playStatus ? (
-            <img
+            <FaPause
               onClick={pause}
-              className="w-5 cursor-pointer lg:w-4"
-              src={assets.pause_icon}
-              alt=""
+              className="cursor-pointer text-[18px] lg:text-[16px]"
             />
           ) : (
-            <img
+            <FaPlay
               onClick={play}
-              className="w-5 cursor-pointer lg:w-4"
-              src={assets.play_icon}
-              alt=""
+              className="cursor-pointer text-[18px] lg:text-[16px]"
             />
           )}
-          <img
+          <IoPlaySkipForwardSharp
+            className="cursor-pointer text-[18px] lg:block lg:text-[16px]"
             onClick={() => next(track.id)}
-            className="w-5 cursor-pointer lg:w-4"
-            src={assets.next_icon}
-            alt=""
-          />
-          <img
-            className="hidden w-4 cursor-pointer"
-            src={assets.loop_icon}
-            alt=""
           />
         </div>
         <div className="relative flex items-center gap-5">
@@ -151,11 +147,11 @@ const Player = () => {
         </div>
       </div>
       <div className="hidden items-center gap-2 opacity-75 lg:flex">
-        <img src={assets.play_icon} alt="" className="w-4" />
-        <img src={assets.mic_icon} alt="" className="w-4" />
-        <img src={assets.queue_icon} alt="" className="w-4" />
-        <img src={assets.speaker_icon} alt="" className="w-4" />
-        <img src={assets.volume_icon} alt="" className="w-4" />
+        {mute ? (
+          <FaVolumeMute onClick={muteSong} className="w-4 cursor-pointer" />
+        ) : (
+          <FaVolumeUp onClick={muteSong} className="w-4 cursor-pointer" />
+        )}
         <input
           onClick={volume}
           ref={volumeRef}
@@ -164,8 +160,6 @@ const Player = () => {
           name=""
           id=""
         />
-        <img src={assets.mini_player_icon} alt="" className="w-4" />
-        <img src={assets.zoom_icon} alt="" className="w-4" />
       </div>
     </div>
   );

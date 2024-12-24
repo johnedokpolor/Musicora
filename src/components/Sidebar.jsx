@@ -1,17 +1,14 @@
 import React from "react";
-import { assets } from "../assets/assets";
 import { useDispatch, useSelector } from "react-redux";
 import { darkmodeActions } from "../store/darkModeSlice";
-import { FaMoon, FaSun } from "react-icons/fa";
+import { GrHomeRounded } from "react-icons/gr";
+import { FiSearch } from "react-icons/fi";
+import { FaArrowRight, FaPlus } from "react-icons/fa6";
+import { IoLibrary } from "react-icons/io5";
+
 import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
-  const navigate = useNavigate();
-  const dark = useSelector((state) => state.darkmode.dark);
-  const dispatch = useDispatch();
-  const toggle = () => {
-    dispatch(darkmodeActions.toggle());
-  };
   function nav() {
     window.location.href = "/";
   }
@@ -22,23 +19,25 @@ const Sidebar = () => {
           onClick={nav}
           className="flex items-center gap-3 pl-8 lg:cursor-pointer"
         >
-          <img className="w-6" src={assets.home_icon} alt="" />
+          <GrHomeRounded className="h-6 w-6" />
           <p className="font-bold">Home</p>
         </div>
         <div className="flex items-center gap-3 pl-8 lg:cursor-pointer">
-          <img className="w-6 text-black" src={assets.search_icon} alt="" />
+          <FiSearch className="h-6 w-6" />
+
           <p className="font-bold">Search</p>
         </div>
       </div>
       <div className="h-[85%] rounded dark:bg-[#121212]">
         <div className="flex items-center justify-between p-4">
           <div className="flex items-center gap-3">
-            <img className="w-5" src={assets.stack_icon} alt="" />
+            <IoLibrary className="h-6 w-6" />
+
             <p className="font-semibold">Your Library</p>
           </div>
           <div className="flex items-center gap-3">
-            <img src={assets.arrow_icon} alt="" className="w-5" />
-            <img src={assets.plus_icon} alt="" className="w-5" />
+            <FaArrowRight className="h-6 w-6" />
+            <FaPlus className="h-6 w-6" />
           </div>
         </div>
         <div className="m-2 flex flex-col items-start justify-start gap-3 rounded bg-[#242424] p-4 pl-4 font-semibold">

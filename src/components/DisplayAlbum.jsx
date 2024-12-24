@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import Navbar from "./Navbar";
 import { useParams } from "react-router-dom";
-import { albumsData, assets, songsData, albumSongs } from "../assets/assets";
+import { albumsData, songsData, albumSongs } from "../assets/assets";
 import { PlayerContext } from "../context/PlayerContext";
-// import { albumSongs } from "../assests/assests";
+import { CiClock2 } from "react-icons/ci";
 
 const DisplayAlbum = () => {
   const { playWithId } = useContext(PlayerContext);
@@ -13,7 +12,6 @@ const DisplayAlbum = () => {
 
   return (
     <div>
-      {/* <Navbar /> */}
       <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-end">
         <img className="w-48 rounded" src={albumData.image} alt="" />
         <div className="flex flex-col">
@@ -22,7 +20,6 @@ const DisplayAlbum = () => {
             {albumData.name}
           </h2>
 
-          {/* <h4>{albumData.desc}</h4> */}
           <p className="mt-1">
             <img
               className="inline-block w-5 rounded-full"
@@ -40,7 +37,7 @@ const DisplayAlbum = () => {
         </p>
         <p className="hidden sm:block">Album</p>
         <p className="hidden sm:block">Date Added</p>
-        <img className="w-4" src={assets.clock_icon} alt="" />
+        <CiClock2 />
       </div>
       <hr />
       {available.map((song, index) => (
