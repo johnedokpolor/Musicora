@@ -61,7 +61,7 @@ export const albumSongs = [
       duration: "2:45",
     },
     {
-      id: 8,
+      id: 5,
       name: "I Know",
       image:
         "https://res.cloudinary.com/dc8icbbn4/image/upload/v1735077102/thegoat_b494rc.jpg",
@@ -79,7 +79,7 @@ export const albumSongs = [
       duration: "2:45",
     },
     {
-      id: 8,
+      id: 5,
       name: "I Know",
       image:
         "https://res.cloudinary.com/dc8icbbn4/image/upload/v1735077102/thegoat_b494rc.jpg",
@@ -98,7 +98,7 @@ export const albumSongs = [
     },
 
     {
-      id: 8,
+      id: 5,
       name: "I Know",
       image:
         "https://res.cloudinary.com/dc8icbbn4/image/upload/v1735077102/thegoat_b494rc.jpg",
