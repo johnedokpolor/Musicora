@@ -3,7 +3,7 @@ import { createContext } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useSelector, useDispatch } from "react-redux";
-import { playStatusActions } from "../store/PlayStatus";
+import { playStatusActions } from "../store/playStatus";
 import { trackActions } from "../store/trackSlice";
 import { songsData } from "../assets/assets";
 import { muteActions } from "../store/mute";

@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import darkModeSlice from "./darkModeSlice";
 import trackSlice from "./trackSlice";
-import playStatusSlice from "./PlayStatus";
+import playStatusSlice from "./playStatus";
 import muteSlice from "./mute";
 const store = configureStore({
   reducer: {
