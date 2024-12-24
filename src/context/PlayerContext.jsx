@@ -39,7 +39,7 @@ const PlayerContextProvider = (props) => {
 
   useEffect(() => {
     volumeRef.current.max = 10;
-    volumeRef.current.value = 1;
+    volumeRef.current.value = 10;
     audioRef.current.volume = volumeRef.current.value / 10;
   }, []);
   useEffect(() => {
@@ -72,6 +72,7 @@ const PlayerContextProvider = (props) => {
     await dispatch(trackActions.play(id));
     await audioRef.current.play();
     dispatch(playStatusActions.on());
+    console.log(id);
   };
   const play = () => {
     audioRef.current.play();
