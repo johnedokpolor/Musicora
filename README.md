@@ -12,13 +12,14 @@ Users should be able to:
 
 Desktop View
 ![](./src/assets/desktop-view.png)
+![](./src/assets/desktop-view2.png)
 
 Mobile View
 ![](./src/assets/mobile-view.png)
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: https://musicora.vercel.app
 
 ## My process
 
@@ -35,22 +36,17 @@ Mobile View
 
 ### What I learned
 
-I learnt how to use Redux for state management
+I learnt how to use Redux for state management.
 
 ### Continued development
 
-I will love to evolve in my Redux State Management
+I will love to evolve in my Redux State Management.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Website - https://musicora.vercel.app
+- Frontend Mentor - @johnedokpolor
 
 ## Acknowledgments
 
 A big shout out to GreatStack Tutorials for being a huge guide throughout this project.
-# Musicora
-# Musicora

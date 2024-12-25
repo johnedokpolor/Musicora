@@ -187,7 +187,7 @@ export const songsData = [
     id: 2,
     name: "21",
     image:
-      "https://res.cloudinary.com/dc8icbbn4/image/upload/v1735077102/thegoat_b464rc.jpg",
+      "https://res.cloudinary.com/dc8icbbn4/image/upload/v1735077102/thegoat_b494rc.jpg",
     file: "https://res.cloudinary.com/dc8icbbn4/video/upload/v1735077116/Polo_G_21_qjhiyx.mp4",
     desc: "Polo G",
     duration: "2:45",
@@ -214,7 +214,7 @@ export const songsData = [
     id: 5,
     name: "I Know",
     image:
-      "https://res.cloudinary.com/dc8icbbn4/image/upload/v1735077102/thegoat_b464rc.jpg",
+      "https://res.cloudinary.com/dc8icbbn4/image/upload/v1735077102/thegoat_b494rc.jpg",
     file: "https://res.cloudinary.com/dc8icbbn4/video/upload/v1735077113/Polo_G_I_Know_xd8id3.mp3",
     desc: "Polo G",
     duration: "2:57",
